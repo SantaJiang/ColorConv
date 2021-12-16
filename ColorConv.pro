@@ -22,3 +22,16 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    root.qrc
+
+win32:{
+ICON = logo.png
+}
+
+macx:{
+ICON = logo.icns
+}
+
+

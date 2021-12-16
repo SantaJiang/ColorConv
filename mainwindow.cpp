@@ -70,7 +70,7 @@ void MainWindow::setLabelColor(QColor color)
 
     QString bg = QString("rgb(%1, %2, %3)").arg(red).arg(green).arg(blue);
 
-    ui->label_color->setStyleSheet(QString("border-radius: 36px; background-color: %1;").arg(bg));
+    ui->label_color->setStyleSheet(QString("border:2px solid rgb(169,169,169); border-radius: 36px; background-color: %1;").arg(bg));
 }
 
 void MainWindow::on_lineEdit_hex_returnPressed()
