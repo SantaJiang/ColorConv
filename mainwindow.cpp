@@ -18,6 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
 #else
     font.setPixelSize(12);
 #endif
+    ui->lineEdit_hex->setFont(font);
+    ui->lineEdit_rgb->setFont(font);
+    ui->label_hex->setFont(font);
+    ui->label_rgb->setFont(font);
 }
 
 MainWindow::~MainWindow()
