@@ -4,11 +4,11 @@
 * 回车查看转换结果，结果自动复制到系统剪贴板
 
 ### 运行效果：
-*Macos:
-![image](https://github.com/SantaJiang/ColorConv/blob/master/image/macos.png)
+* Macos:  
+![image](https://github.com/SantaJiang/ColorConv/blob/master/image/macos.png)  
 
-*Windows:
-![image](https://github.com/SantaJiang/ColorConv/blob/master/image/windows.png)
+* Windows:  
+![image](https://github.com/SantaJiang/ColorConv/blob/master/image/windows.png)  
 
 # Introduction
 * Hexadecimal color code and RGB color value conversion tool, based on Qt implementation, compatible with Qt5 and Qt6.
@@ -16,8 +16,8 @@
 * Press Enter to view the conversion result, which is automatically copied to the system clipboard.
 
 ### Operation effect：
-*Macos:
-![image](https://github.com/SantaJiang/ColorConv/blob/master/image/macos.png)
+* Macos:  
+![image](https://github.com/SantaJiang/ColorConv/blob/master/image/macos.png)  
 
-*Windows:
+* Windows:  
 ![image](https://github.com/SantaJiang/ColorConv/blob/master/image/windows.png)
