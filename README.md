@@ -4,9 +4,10 @@
 * 回车查看转换结果，结果自动复制到系统剪贴板
 
 ### 运行效果：
-Macos:
+*Macos:
 ![image](https://github.com/SantaJiang/ColorConv/blob/master/image/macos.png)
-Windows:
+
+*Windows:
 ![image](https://github.com/SantaJiang/ColorConv/blob/master/image/windows.png)
 
 # Introduction
@@ -15,7 +16,8 @@ Windows:
 * Press Enter to view the conversion result, which is automatically copied to the system clipboard.
 
 ### Operation effect：
-Macos:
+*Macos:
 ![image](https://github.com/SantaJiang/ColorConv/blob/master/image/macos.png)
-Windows:
+
+*Windows:
 ![image](https://github.com/SantaJiang/ColorConv/blob/master/image/windows.png)
