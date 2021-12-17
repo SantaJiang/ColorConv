@@ -27,7 +27,7 @@ RESOURCES += \
     root.qrc
 
 win32:{
-ICON = logo.png
+ICON = logo.ico
 }
 
 macx:{

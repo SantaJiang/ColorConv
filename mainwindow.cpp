@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QClipboard>
+#include <QFont>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,6 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->lineEdit_hex->setText("#00BFFF");
     on_lineEdit_hex_returnPressed();
+
+    QFont font;
+    font.setFamily("Arial Rounded MT Bold");
+#ifdef Q_OS_WIN
+    font.setPixelSize(10);
+#else
+    font.setPixelSize(12);
+#endif
 }
 
 MainWindow::~MainWindow()
