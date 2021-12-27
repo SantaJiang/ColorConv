@@ -9,7 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->lineEdit_hex->setText("#00BFFF");
-    on_lineEdit_hex_returnPressed();
+    QString str = HexToRgb(ui->lineEdit_hex->text());
+    ui->lineEdit_rgb->setText(str);
 
     QFont font;
     font.setFamily("Arial Rounded MT Bold");
