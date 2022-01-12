@@ -8,21 +8,15 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     ui->lineEdit_hex->setText("#00BFFF");
     QString str = HexToRgb(ui->lineEdit_hex->text());
     ui->lineEdit_rgb->setText(str);
 
-    QFont font;
-    font.setFamily("Arial Rounded MT Bold");
-#ifdef Q_OS_WIN
-    font.setPixelSize(10);
-#else
-    font.setPixelSize(12);
-#endif
-    ui->lineEdit_hex->setFont(font);
-    ui->lineEdit_rgb->setFont(font);
-    ui->label_hex->setFont(font);
-    ui->label_rgb->setFont(font);
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(hiden()));
+    timer->setInterval(2000);
+    timer->setSingleShot(true);
 }
 
 MainWindow::~MainWindow()
@@ -84,7 +78,9 @@ void MainWindow::setLabelColor(QColor color)
 
     QString bg = QString("rgb(%1, %2, %3)").arg(red).arg(green).arg(blue);
 
-    ui->label_color->setStyleSheet(QString("border:2px solid rgb(169,169,169); border-radius: 36px; background-color: %1;").arg(bg));
+    int temp = (color.red() + color.green() + color.blue()) / 3;
+    ui->label_color->setStyleSheet(QString("border:2px solid rgb(169,169,169); border-radius: 36px; background-color: %1;color: %2")
+                                   .arg(bg).arg(temp < 200 ? "#FEFEFE" : "#000000"));
 }
 
 void MainWindow::on_lineEdit_hex_returnPressed()
@@ -94,6 +90,7 @@ void MainWindow::on_lineEdit_hex_returnPressed()
     //复制到剪贴板
     QClipboard *clip = QApplication::clipboard();
     clip->setText(str);
+    showToast();
 }
 
 
@@ -104,5 +101,20 @@ void MainWindow::on_lineEdit_rgb_returnPressed()
     //复制到剪贴板
     QClipboard *clip = QApplication::clipboard();
     clip->setText(str);
+    showToast();
 }
 
+void MainWindow::hiden()
+{
+    ui->label_color->clear();
+}
+
+void MainWindow::showToast()
+{
+    ui->label_color->setText("copied");
+
+    if(timer->isActive())
+        timer->stop();
+
+    timer->start();
+}

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QColor>
 #include <QMouseEvent>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,13 +21,16 @@ public:
 private slots:
     void on_lineEdit_hex_returnPressed();
     void on_lineEdit_rgb_returnPressed();
+    void hiden();
 
 private:
     QString RgbToHex(QString rgb);
     QString HexToRgb(QString hex);
     void setLabelColor(QColor color);
+    void showToast();
 
 private:
     Ui::MainWindow *ui;
+    QTimer *timer;
 };
 #endif // MAINWINDOW_H

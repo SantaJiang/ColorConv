@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ColorConv 1.1</string>
+   <string>ColorConv 1.2</string>
   </property>
   <property name="windowIcon">
    <iconset resource="root.qrc">
@@ -194,7 +194,7 @@
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item>
+      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
        <widget class="QLabel" name="label_color">
         <property name="minimumSize">
          <size>
@@ -215,7 +215,7 @@
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
