@@ -13,6 +13,19 @@ MainWindow::MainWindow(QWidget *parent)
     QString str = HexToRgb(ui->lineEdit_hex->text());
     ui->lineEdit_rgb->setText(str);
 
+    QFont font;
+    font.setFamily("Arial Rounded MT Bold");
+#ifdef Q_OS_WIN
+    font.setPixelSize(10);
+#else
+    font.setPixelSize(12);
+#endif
+    ui->label_color->setFont(font);
+    ui->label_hex->setFont(font);
+    ui->label_rgb->setFont(font);
+    ui->lineEdit_hex->setFont(font);
+    ui->lineEdit_rgb->setFont(font);
+
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(hiden()));
     timer->setInterval(2000);
